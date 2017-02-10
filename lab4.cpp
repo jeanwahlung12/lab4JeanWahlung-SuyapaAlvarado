@@ -1,7 +1,11 @@
 #include <iostream>
 #include <string>
+#include <cstdlib>
+
+
 using namespace std;
 string vigenere(string,string);
+string CodigoCesar(string);
 int main (){
    string texto;
    string clave;
@@ -10,7 +14,9 @@ int main (){
    cout << " ingrese el texto a Cifrar";
    cin >> texto;
    cout << " el cifrado vigenere es :";
-   cout << vigenere(texto,clave) << endl;   
+   cout << vigenere(texto,clave) << endl;
+   cout << " el cifrado de vigenere pasado a cifrado cesar es : " ;  
+   cout <<  CodigoCesar(vigenere(texto,clave)) << endl;
 return 0;
 }
 
@@ -37,10 +43,12 @@ string vigenere(string texto, string clave){
 int num;
     for (int i=0;i<texto.size();i++){
       int text = texto[i];
+      
+     
       int password = nuevaclave[i];
       
-      cifrado = (text+ password)%26  ;
-      
+      cifrado = (text+ password)%27  ;
+       
       
       if(cifrado ==1){
           cifrado2 += 'a';
@@ -131,4 +139,34 @@ int num;
 
  } 
  
+
+
+
+
+
+string CodigoCesar(string);
+
+
+string CodigoCesar (string palabra){
+ string palabrac="";
+ char temp;
+ string result;
+ int num;
+	for (int i=0;i < palabra.size();i++){
+		temp = palabra.at(i);
+		num = (int)temp;
+		if (num>=121){
+			if (num==121)
+				num=97;
+			if (num==122)
+				num=98;
+		}else{
+		num = num+2;
+		}
+			
+		palabrac = palabrac + (char)num;
+		
+	}
+return palabrac;
+}
 
