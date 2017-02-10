@@ -1,9 +1,11 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
+#include <bitset>
 
 using namespace std;
 string CodigoCesar(string);
+string CodigoXOR(string, string); 
 
  int main(){
 
@@ -39,5 +41,21 @@ string CodigoCesar (string palabra){
 		palabrac = palabrac + (char)num;
 		
 	}
+string CodigoXOR (string clave, string palabra){
+ 
+ int arrayClave[clave.size];
+ int arrayPalabra[palabra.size()];
+
+ //llenar el arreglo de enteros la clave
+ for (int i =0; i< clave.size(); i++){
+	arrayClave[i] = (int)clave[i];	
+	
+ }//fin for
+ //llenar el arreglo de enteros de palabras
+ for (int j=0; j < palabra.size();j++){
+      arrayPalabra[i] = (int)palabra[i];
+ }
+
+ } 
 return palabrac;
 }
